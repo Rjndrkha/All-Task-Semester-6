@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="265" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bb765419-7b16-4474-941d-452115b76027">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="ptrans" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     outcloth.`idtransaksi` AS outcloth_idtransaksi,
+     outcloth.`idcloth` AS outcloth_idcloth,
+     outcloth.`tanggal` AS outcloth_tanggal,
+     outcloth.`nama` AS outcloth_nama,
+     outcloth.`jenis` AS outcloth_jenis,
+     outcloth.`jumlah` AS outcloth_jumlah,
+     outcloth.`hargajual` AS outcloth_hargajual,
+     outcloth.`subtotal` AS outcloth_subtotal,
+     outcloth.`total` AS outcloth_total,
+     outcloth.`bayar` AS outcloth_bayar,
+     outcloth.`kembalian` AS outcloth_kembalian
+FROM
+     `outcloth` outcloth
+WHERE
+     idtransaksi LIKE '%$P!{ptrans}%']]>
+	</queryString>
+	<field name="outcloth_idtransaksi" class="java.lang.String"/>
+	<field name="outcloth_idcloth" class="java.lang.String"/>
+	<field name="outcloth_tanggal" class="java.sql.Date"/>
+	<field name="outcloth_nama" class="java.lang.String"/>
+	<field name="outcloth_jenis" class="java.lang.String"/>
+	<field name="outcloth_jumlah" class="java.lang.String"/>
+	<field name="outcloth_hargajual" class="java.lang.String"/>
+	<field name="outcloth_subtotal" class="java.lang.String"/>
+	<field name="outcloth_total" class="java.lang.String"/>
+	<field name="outcloth_bayar" class="java.lang.String"/>
+	<field name="outcloth_kembalian" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="553" height="70" forecolor="#666666" uuid="3d779c15-fa54-4813-aa3b-af6ccbe273ac"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Steppes TT" size="54" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[JAVA CLOTH]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="eb84e5c8-59c3-47be-a570-b5361547e8a1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="93" height="15" forecolor="#666666" uuid="89dbf250-1ef3-4f61-afa7-5da44d487818"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Rockwell"/>
+				</textElement>
+				<text><![CDATA[IDTRANSAKSI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="93" y="19" width="68" height="15" forecolor="#666666" uuid="09055147-901b-4a06-be7f-b802adab2dd3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Rockwell"/>
+				</textElement>
+				<text><![CDATA[IDCLOTH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="161" y="19" width="68" height="15" forecolor="#666666" uuid="efcd39e9-3bba-45c9-8ed6-ead989fa70ed"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Rockwell"/>
+				</textElement>
+				<text><![CDATA[TANGGAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="229" y="19" width="68" height="15" forecolor="#666666" uuid="9f62a37b-e57a-44c5-8f93-530417803cac"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Rockwell"/>
+				</textElement>
+				<text><![CDATA[NAMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="297" y="19" width="65" height="15" forecolor="#666666" uuid="93442767-005c-4703-8a81-79c78eede998"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Rockwell"/>
+				</textElement>
+				<text><![CDATA[JENIS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="362" y="19" width="63" height="15" forecolor="#666666" uuid="a5519c4e-31f4-4ff7-a6fa-4ac3da0a212f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Rockwell"/>
+				</textElement>
+				<text><![CDATA[JUMLAH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="425" y="19" width="61" height="15" forecolor="#666666" uuid="d61442cc-42d5-4b9c-ad01-138fdf5a8126"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Rockwell"/>
+				</textElement>
+				<text><![CDATA[HARGA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="486" y="19" width="69" height="15" forecolor="#666666" uuid="aef453a0-67ce-447b-94b3-21245f45c821"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Rockwell"/>
+				</textElement>
+				<text><![CDATA[SUBTOTAL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="b965184c-c3a8-44e1-8d1e-2bfaa6b04cef"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="93" height="15" forecolor="#666666" uuid="8749bc49-a028-4f77-b762-3b2a96dfdfb6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Rockwell"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{outcloth_idtransaksi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="93" y="0" width="68" height="15" forecolor="#666666" uuid="e6f04954-071e-4c84-84af-158ccdf385bb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Rockwell"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{outcloth_idcloth}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yy">
+				<reportElement style="Detail" x="161" y="0" width="68" height="15" forecolor="#666666" uuid="138de33d-9860-48d6-ab9f-6a080afca559"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Rockwell"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{outcloth_tanggal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="229" y="0" width="68" height="15" forecolor="#666666" uuid="2f8ea63c-8cd5-467a-8949-e68de7b8072f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Rockwell"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{outcloth_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="297" y="0" width="65" height="15" forecolor="#666666" uuid="e40079ce-8083-4290-a9dc-83f9bf054905"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Rockwell"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{outcloth_jenis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="362" y="0" width="63" height="15" forecolor="#666666" uuid="e3168ddb-ea51-4b79-8d62-b68d4d2e6dc8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Rockwell"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{outcloth_jumlah}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="433" y="0" width="53" height="15" forecolor="#666666" uuid="ccef63bd-32fb-4e12-ad8f-9fe9c2573784"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Rockwell"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{outcloth_hargajual}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="486" y="1" width="67" height="15" forecolor="#666666" uuid="3af457d6-402b-46a0-8426-f0387955b65e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Rockwell"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{outcloth_subtotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="71" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="f80ccd92-05a1-4d5b-a745-1577fd5559aa"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="453" y="4" width="100" height="20" forecolor="#666666" uuid="a1e955a1-7ebd-43a9-95e6-7facad9a57d4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Rockwell" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{outcloth_total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="374" y="4" width="79" height="20" forecolor="#666666" uuid="30eb1737-4721-4298-b4a0-1803d17cd939"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Rockwell" isItalic="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="453" y="24" width="100" height="20" forecolor="#666666" uuid="093f75d7-19f3-483b-be95-85c14378e0c9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Rockwell" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{outcloth_bayar}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="374" y="24" width="79" height="20" forecolor="#666666" uuid="93242870-9440-4471-a61a-81fb51967927"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Rockwell" isItalic="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[BAYAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="374" y="44" width="79" height="20" forecolor="#666666" uuid="ddde1313-8368-4057-a95d-2b8d63f78a84"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Rockwell" isItalic="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[KEMBALIAN]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="453" y="44" width="100" height="20" forecolor="#666666" uuid="ba72d460-4c59-4fbe-897f-22a6dddca33a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Rockwell" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{outcloth_kembalian}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" forecolor="#666666" uuid="b693945d-818a-41ec-ac30-d34cf47913db"/>
+				<textElement>
+					<font fontName="Rockwell" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
